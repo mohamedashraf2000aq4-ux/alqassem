@@ -1,0 +1,365 @@
+/* ==========================================
+   1.التنسيقات الرئيسية للصفحة
+   ========================================== */
+:root {
+    /* Colors */
+    --primary-color: #1a2b49;
+    /* الأزرق الداكن */
+    --accent-color: #cbb26a;
+    /* الذهبي */
+    --accent-hover: #b59c54;
+    /* الذهبي عند التمرير */
+    --bg-light: #f8f9fa;
+    /* خلفية الصفحة */
+    --bg-white: #ffffff;
+    /* الكروت والـ Header */
+    --text-main: #333333;
+    /* النص الأساسي */
+    --text-muted: #666666;
+    /* النص الفرعي */
+    --text-light: #d1d5db;
+    /* النصوص الفاتحة */
+    --border-color: #e2e8f0;
+    /* حدود المدخلات */
+
+    /* Typography */
+    --font-main: 'Tajawal', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+
+    /* Shadows & Transitions */
+    --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --transition-fast: all 0.3s ease;
+}
+
+/* ==========================================
+   2. استيراد Font
+   ========================================== */
+@font-face {
+    font-family: 'Tajawal';
+    src: url('../Fonts/Tajawal/Tajawal-Bold.ttf') format('truetype');
+    font-display: swap;
+    /*تحسين سرعة ظهور النص*/
+
+}
+
+/* ==========================================
+   3. تنسيق جسم الصفحة
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   4. تنسيق header and navba
+  ========================================== */
+header {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /*توزيع  عناصر الهيد*/
+    align-items: center;
+    /*توسيط القائمة في منتصف Div*/
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    /*تنسيق النصوص  راسيا */
+    align-items: center;
+    /*محاذاة العناصر*/
+}
+
+.logo-title {
+    font-size: 22px;
+    font-weight: var(--font-weight-heavy);
+    color: var(--primary-color);
+}
+
+.logo-subtitle {
+    font-size: 14px;
+    color: var(--accent-color);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 2px;
+    /*المسافة بين الكلام*/
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    /*المسافة بين كل قائمة */
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    font-size: 16px;
+    transition: var(--transition-fast);
+    /*اضافة حركة */
+    padding-bottom: 5px;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-hover);
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-hover);
+}
+
+/* السطر السفلي للرابط النشط */
+.nav-link.active::after {
+    content: '';
+    /*يعلن عن إنشاء عنصر وهمي فارغ*/
+    position: absolute;
+    /*يجعل تموضع الخط مطلقاً بناءً على موقع الرابط الأب*/
+    bottom: 0;
+    /*يضع الخط في أسفل الرابط تماماً. */
+    right: 0;
+    /*يبدأ رسم الخط من جهة اليمين*/
+    width: 100%;
+    /*يجعل طول الخط يمتد بعرض الرابط كاملاً.*/
+    height: 2px;
+    /*سُمْك الخط بـ 2 بكسل.*/
+    background-color: var(--accent-color);
+}
+
+/* ==========================================
+   5. تنسيق section-main
+   ========================================== */
+
+.section-main {
+    height: calc(100vh - 88px);
+    background: linear-gradient(rgba(0, 15, 20, 0.70)),
+        url('../imges/businessman.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--bg-white);
+    padding: 0 20px;
+}
+
+.content-main {
+    max-width: 850px;
+    margin-right: 40%;
+}
+
+.content-main h1 {
+    font-size: 44px;
+    font-weight: var(--font-weight-heavy);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.content-main p {
+    font-size: 19px;
+    margin-bottom: 35px;
+    color: var(--bg-white);
+}
+
+/* ==========================================
+   6. تنسيق cta-buttons
+   ========================================== */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 32px;
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    border-radius: 4px;
+    /* cursor: pointer; */
+    text-decoration: none;
+    transition: var(--transition-fast);
+    display: inline-block;
+}
+
+.btn-golden {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-golden:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-outline {
+    background-color: transparent;
+    /*ازالة اي لون افتراضي للخلفية*/
+    color: var(--bg-white);
+    border: 2px solid var(--bg-white);
+}
+
+.btn-outline:hover {
+    background-color: var(--bg-white);
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   7. تنسيق container-main  
+   ========================================== */
+.container-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.section-title::after {
+    /*اضافة خط اسفل الجملة */
+    content: '';
+    width: 80%;
+    height: 3px;
+    background-color: var(--accent-color);
+    position: absolute;
+    bottom: -10px;
+    right: 10%;
+}
+
+
+.expeience {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card-main {
+    background: var(--bg-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+    border-top: 4px solid var(--accent-color);
+    width: 500px;
+    height: 250px;
+    text-align: right;
+}
+
+
+.card-main:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-main h3 {
+    color: var(--primary-color);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card-main p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/*_____________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________*/
+
+/* ==========================================
+   تنسيقات التجاوب الشاملة للموبايل
+   ========================================== */
+@media (max-width: 768px) {
+    /* 1. منع التمرير الأفقي وإصلاح إطار الصفحة */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+
+    /* 2. تحويل جميع الشبكات والكروت إلى وضع رأسي */
+    .expeience, 
+    .grid-2, 
+    .grid-3, 
+    .content-ashraf, 
+    .team-card, 
+    .about-container {
+        flex-direction: column !important;
+        display: flex !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+
+    /* 3. إلغاء الأحجام الثابتة للكروت */
+    .card-main, 
+    .card, 
+    .info-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. إزالة الإزاحة الجانبية في الهيرو والـ Navbar */
+    .content-main {
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    .navbar {
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 15px 10px !important;
+    }
+
+    .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    /* 5. ضبط العناوين والصور */
+    .content-main h1 { font-size: 26px !important; }
+    .section-title { font-size: 22px !important; }
+
+    .about-image, .about-image img {
+        width: 100% !important;
+        max-height: 300px !important;
+        object-fit: cover !important;
+    }
+}

@@ -1,0 +1,325 @@
+/* ==========================================
+   1.التنسيقات الرئيسية للصفحة
+   ========================================== */
+:root {
+    /* Colors */
+    --primary-color: #1a2b49;     /* الأزرق الداكن */
+    --accent-color: #cbb26a;      /* الذهبي */
+    --accent-hover: #b59c54;      /* الذهبي عند التمرير */
+    --bg-light: #f8f9fa;          /* خلفية الصفحة */
+    --bg-white: #ffffff;          /* الكروت والـ Header */
+    --text-main: #333333;         /* النص الأساسي */
+    --text-muted: #666666;        /* النص الفرعي */
+    --text-light: #d1d5db;        /* النصوص الفاتحة */
+    --border-color: #e2e8f0;      /* حدود المدخلات */
+
+    /* Typography */
+    --font-main: 'Tajawal', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+
+    /* Shadows & Transitions */
+    --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --transition-fast: all 0.3s ease;
+}
+
+/* ==========================================
+   2. تنسيق contact-header
+   ========================================== */
+
+.contact-header h1 {
+    font-size: 36px;
+    font-weight: var(--font-weight-heavy);
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+.contact-header p {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-muted);
+    margin-right: 10px;
+}
+
+/* ==========================================
+   تنسيقات قسم الاتصال والتواصل الاجتماعي
+   ========================================== */
+.contact-info-cards h3 {
+    color:var(--primary-color);
+    margin-bottom:25px;
+    font-size:22px;
+    margin-right: 10px;
+}
+
+
+/* روابط البطاقات */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* نموذج الاتصال */
+.contact-form {
+    background: var(--bg-white);
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--accent-color);
+}
+
+.contact-form h3 {
+    font-size: 22px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--font-weight-medium);
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: var(--font-main);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    background-color: var(--bg-white);
+    box-shadow: 0 0 0 3px rgba(203, 178, 106, 0.15);
+}
+
+textarea.form-control {
+    height: 130px;
+    resize: vertical;
+}
+
+/* زر الإرسال */
+.btn-golden {
+    background-color: var(--accent-color);
+    color: var(--bg-white);
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-main);
+    border-radius: 6px;
+    transition: var(--transition-fast);
+}
+
+.btn-golden:hover {
+    background-color: var(--accent-hover);
+}
+
+/* بطاقات المعلومات الجانبية */
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--bg-white);
+    padding: 16px 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    border-right: 4px solid var(--accent-color);
+    margin-bottom: 15px;
+    transition: var(--transition-fast);
+}
+
+.contact-card:hover {
+    transform: translateX(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-card strong {
+    color: var(--primary-color);
+    margin-left: 6px;
+    font-weight: var(--font-weight-bold);
+}
+
+.contact-card p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+/* ألوان الأيقونات الأساسية */
+.contact-icon {
+    font-size: 24px;
+    width: 30px;
+    text-align: center;
+}
+
+.whatsapp-color { color: #25D366; }
+.phone-color { color: var(--primary-color); }
+.email-color { color: var(--accent-color); }
+
+/* صندوق شبكات التواصل الاجتماعي */
+.social-media-box {
+    margin-top: 25px;
+    background: var(--bg-white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    text-align: right;
+}
+
+.social-media-box h4 {
+    font-size: 15px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--text-main);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-fast);
+}
+
+/* تأثيرات التمرير لشبكات التواصل */
+.social-icon.facebook:hover {
+    background-color: #1877F2;
+    color: var(--bg-white);
+    border-color: #1877F2;
+}
+
+.social-icon.linkedin:hover {
+    background-color: #0A66C2;
+    color: var(--bg-white);
+    border-color: #0A66C2;
+}
+
+.social-icon.tiktok:hover {
+    background-color: #000000;
+    color: var(--bg-white);
+    border-color: #000000;
+}
+
+/*_____________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________*/
+/* ==========================================
+   تنسيقات التجاوب لقسم الاتصال والتواصل (contact-section)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. ضبط عناوين قسم التواصل */
+    .contact-header h1 {
+        font-size: 24px;
+        margin-right: 0;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .contact-header p {
+        font-size: 14px;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .contact-info-cards h3 {
+        font-size: 18px;
+        margin-right: 0;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* 2. ضبط نموذج الاتصال (Form) */
+    .contact-form {
+        padding: 20px 15px;
+        border-radius: 8px;
+    }
+
+    .contact-form h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    textarea.form-control {
+        height: 100px; /* تقليل ارتفاع صندوق الرسالة للموبايل */
+    }
+
+    /* 3. جعل زر الإرسال يمتد بعرض الشاشة */
+    .contact-form .btn-golden {
+        width: 100%;
+        text-align: center;
+        padding: 12px 15px;
+    }
+
+    /* 4. بطاقات معلومات التواصل الجانبية */
+    .contact-card {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+
+    .contact-card p {
+        font-size: 13.5px;
+    }
+
+    .contact-icon {
+        font-size: 20px;
+        width: 24px;
+    }
+
+    /* 5. صندوق شبكات التواصل الاجتماعي وتوسيط الأيقونات */
+    .social-media-box {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center; /* توسيط أيقونات فيسبوك ولينكدإن وتيك توك */
+        gap: 12px;
+    }
+
+    .social-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}

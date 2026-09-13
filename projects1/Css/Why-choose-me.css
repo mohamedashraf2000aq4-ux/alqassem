@@ -1,0 +1,117 @@
+/* ==========================================
+   1.التنسيقات الرئيسية للصفحة
+   ========================================== */
+:root {
+    /* Colors */
+    --primary-color: #1a2b49;     /* الأزرق الداكن */
+    --accent-color: #cbb26a;      /* الذهبي */
+    --accent-hover: #b59c54;      /* الذهبي عند التمرير */
+    --bg-light: #f8f9fa;          /* خلفية الصفحة */
+    --bg-white: #ffffff;          /* الكروت والـ Header */
+    --text-main: #333333;         /* النص الأساسي */
+    --text-muted: #666666;        /* النص الفرعي */
+    --text-light: #d1d5db;        /* النصوص الفاتحة */
+    --border-color: #e2e8f0;      /* حدود المدخلات */
+
+    /* Typography */
+    --font-main: 'Tajawal', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+
+    /* Shadows & Transitions */
+    --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --transition-fast: all 0.3s ease;
+}
+
+/* ==========================================
+   2. تنسيق choose-header
+   ========================================== */
+
+.choose-header h1 {
+    font-size: 36px;
+    font-weight: var(--font-weight-heavy);
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.choose-header p {
+    font-size: 16px;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-muted);
+    margin-right: 10px;
+}
+
+
+/* ==========================================
+   3. تنسيق container-choose 
+   ========================================== */
+.container-choose {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.content-choose {
+    display: flex;
+    gap: 30px;
+}
+
+.choose-box {
+    text-align: center;
+    background: var(--bg-white);
+    padding: 35px 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+.choose-icon {
+    font-size: 40px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+/*_____________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________*/
+
+/* ==========================================
+   تنسيقات التجاوب للموبايل (choose-section)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. قسم العناوين (choose-header) */
+    .choose-header h1 {
+        font-size: 24px;
+        margin-right: 0; /* إلغاء الهامش الأيمن لمنع الخروج عن الشاشة */
+        text-align: center;
+    }
+
+    .choose-header p {
+        font-size: 14px;
+        margin-right: 0; /* إلغاء الهامش الأيمن */
+        text-align: center;
+    }
+
+    /* 2. الحاوية والكروت (container-choose & choose-box) */
+    .container-choose {
+        padding: 30px 15px; /* تقليل المساحات الخارجية */
+    }
+
+    .content-choose {
+        flex-direction: column; /* تحويل الكروت للوضع الرأسي تحت بعضها */
+        gap: 20px;
+    }
+
+    .choose-box {
+        width: 100%; /* جعل الكارت يعتمد على عرض الهاتف كاملاً */
+        padding: 25px 15px;
+    }
+
+    .choose-icon {
+        font-size: 32px; /* تصغير أيقونات الخدمات تناسباً مع شاشة الهاتف */
+        margin-bottom: 10px;
+    }
+}

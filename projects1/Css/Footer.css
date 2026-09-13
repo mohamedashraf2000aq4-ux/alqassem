@@ -1,0 +1,139 @@
+/* ==========================================
+   1.التنسيقات الرئيسية للصفحة
+   ========================================== */
+:root {
+    /* Colors */
+    --primary-color: #1a2b49;     /* الأزرق الداكن */
+    --accent-color: #cbb26a;      /* الذهبي */
+    --accent-hover: #b59c54;      /* الذهبي عند التمرير */
+    --bg-light: #f8f9fa;          /* خلفية الصفحة */
+    --bg-white: #ffffff;          /* الكروت والـ Header */
+    --text-main: #333333;         /* النص الأساسي */
+    --text-muted: #666666;        /* النص الفرعي */
+    --text-light: #d1d5db;        /* النصوص الفاتحة */
+    --border-color: #e2e8f0;      /* حدود المدخلات */
+
+    /* Typography */
+    --font-main: 'Tajawal', sans-serif;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+
+    /* Shadows & Transitions */
+    --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --transition-fast: all 0.3s ease;
+}
+
+/* ==========================================
+   2. تنسيق footer-content
+   ========================================== */
+.contact-form {
+    background: var(--bg-white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+}
+
+textarea.form-control {
+    height: 120px;
+    resize: vertical;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    padding: 40px 20px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/*_____________________________________________________________________________________________________________________________________________
+_______________________________________________________________________________________________________________________________________________*/
+
+/* ==========================================
+   تنسيقات التجاوب للنموذج والفوتر (contact & footer)
+   ========================================== */
+@media (max-width: 768px) {
+
+    /* 1. تقليل الحشوات داخل نموذج الاتصال */
+    .contact-form {
+        padding: 25px 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    textarea.form-control {
+        height: 100px; /* تقليل ارتفاع صندوق النص للموبايل */
+    }
+
+    /* 2. تحويل عناصر الفوتر للوضع الرأسي وتوسيطها */
+    footer {
+        padding: 30px 15px 15px 15px;
+        margin-top: 40px;
+    }
+
+    .footer-content {
+        flex-direction: column; /* جعل روابط ومعلومات الفوتر فوق بعضها */
+        text-align: center;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    .footer-bottom {
+        font-size: 13px;
+        padding-top: 15px;
+    }
+}
